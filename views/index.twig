@@ -1,0 +1,29 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+<h1>contact List</h1>
+<table border=1>
+<thead>
+<th>FullName</th>
+<th>Phone</th>
+</thead>
+<tbody>
+{% for c in contactsList %}
+<tr>
+<td>{{c.fullName}}</td>
+<td>{{c.Phone}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<h1>Add contact</h1>
+<form method="post" action="http://localhost:5000/contacts">
+<label>fullName:</label>
+<input type="text" name="fullName" />
+<label>phone:</label>
+<input type="number" name="Phone" />
+<button type="submit">add contact</button>
+</form>
+{% endblock %}
+
+
