@@ -14,7 +14,7 @@ var usersRouter = require("./routes/users");
 var app = express();
 mongoose.set("strictQuery", true);
 mongoose
-  .connect("mongodb://localhost:27017/2info2", {
+  .connect(db.mongo.uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

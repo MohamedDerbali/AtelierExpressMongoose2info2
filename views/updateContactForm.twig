@@ -1,0 +1,12 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+<h1>update contact</h1>
+<form method="post" action="http://localhost:5000/contacts/addContact">
+<label>fullName:</label>
+<input type="text" name="fullName" value={{contact.fullName}} />
+<label>phone:</label>
+<input type="number" name="Phone" value={{contact.Phone }} />
+<button type="submit">update contact</button>
+</form>
+{% endblock %}

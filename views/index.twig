@@ -6,18 +6,20 @@
 <thead>
 <th>FullName</th>
 <th>Phone</th>
+<th>Action</th>
 </thead>
 <tbody>
 {% for c in contactsList %}
 <tr>
 <td>{{c.fullName}}</td>
 <td>{{c.Phone}}</td>
+<td><button style="background-color:green;color:white" onclick="location.href = 'http://localhost:5000/contacts/updateContact/{{c._id}}'">Update</button></td>
 </tr>
 {% endfor %}
 </tbody>
 </table>
 <h1>Add contact</h1>
-<form method="post" action="http://localhost:5000/contacts">
+<form method="post" action="http://localhost:5000/contacts/addContact">
 <label>fullName:</label>
 <input type="text" name="fullName" />
 <label>phone:</label>
