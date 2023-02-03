@@ -2,7 +2,7 @@
 
 {% block body %}
 <h1>update contact</h1>
-<form method="post" action="http://localhost:5000/contacts/addContact">
+<form method="post" action="http://localhost:5000/contacts/updateContact/{{contact._id}}">
 <label>fullName:</label>
 <input type="text" name="fullName" value={{contact.fullName}} />
 <label>phone:</label>

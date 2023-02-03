@@ -2,6 +2,10 @@
 
 {% block body %}
 <h1>contact List</h1>
+<form method="post" action="http://localhost:5000/contacts/search">
+<input type="text" name="search" placeholder="rechercher..."/>
+<button type="submit">search</button>
+</form>
 <table border=1>
 <thead>
 <th>FullName</th>
@@ -13,12 +17,15 @@
 <tr>
 <td>{{c.fullName}}</td>
 <td>{{c.Phone}}</td>
-<td><button style="background-color:green;color:white" onclick="location.href = 'http://localhost:5000/contacts/updateContact/{{c._id}}'">Update</button></td>
+<td><button style="background-color:green;color:white" onclick="location.href = 'http://localhost:5000/contacts/updateContact/{{c._id}}'">Update</button>
+<button style="background-color:red;color:white" onclick="location.href = 'http://localhost:5000/contacts/deleteContact/{{c._id}}'">Delete</button></td>
 </tr>
 {% endfor %}
 </tbody>
 </table>
 <h1>Add contact</h1>
+<br/>
+
 <form method="post" action="http://localhost:5000/contacts/addContact">
 <label>fullName:</label>
 <input type="text" name="fullName" />
